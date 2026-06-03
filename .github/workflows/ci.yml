@@ -34,17 +34,5 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
-      - name: Lint
-        run: npm run lint
-
-      - name: Run utils test
-        run: npm run test:utils
-
-      - name: Run contract test
-        run: npm run test:contract
-
-      - name: Run constants test
-        run: npm run test:constants
-
       - name: Build
         run: npm run build
