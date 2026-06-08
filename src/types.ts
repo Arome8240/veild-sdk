@@ -74,6 +74,78 @@ export interface ReplyParams {
   publishToWall: boolean;
 }
 
+// ─── VeildTips types ──────────────────────────────────────────────────────────
+
+export interface Tip {
+  fan:     Address;
+  amount:  bigint;
+  message: string;
+  sentAt:  bigint;
+}
+
+export interface FanEntry {
+  fan:         Address;
+  totalTipped: bigint;
+}
+
+// ─── VeildSubscriptions types ─────────────────────────────────────────────────
+
+export interface SubscriptionTier {
+  pricePerMonth: bigint;
+  label:         string;
+  isActive:      boolean;
+}
+
+export interface Subscription {
+  tierId:    bigint;
+  startedAt: bigint;
+  expiresAt: bigint;
+  renewals:  bigint;
+}
+
+// ─── VeildPools types ─────────────────────────────────────────────────────────
+
+/** Mirrors the PoolStatus enum in VeildPools.sol */
+export type PoolStatus = 0 | 1 | 2 | 3; // Active | Answered | Expired | Cancelled
+
+export interface Pool {
+  id:          bigint;
+  creator:     Address;
+  question:    string;
+  totalFunded: bigint;
+  deadline:    bigint;
+  status:      PoolStatus;
+  answer:      string;
+  answeredAt:  bigint;
+}
+
+export interface Contribution {
+  contributor: Address;
+  amount:      bigint;
+  refunded:    boolean;
+}
+
+// ─── SDK param types (new) ────────────────────────────────────────────────────
+
+export interface TipParams {
+  creatorAddress: Address;
+  message?:       string;
+  amount:         bigint;
+}
+
+export interface SubscribeParams {
+  creatorAddress: Address;
+  tierId:         bigint;
+  amount:         bigint;
+}
+
+export interface CreatePoolParams {
+  creatorAddress: Address;
+  question:       string;
+  duration:       bigint; // seconds
+  amount:         bigint;
+}
+
 // ─── Result types ──────────────────────────────────────────────────────────────
 
 export interface WriteResult {
