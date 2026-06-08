@@ -146,6 +146,44 @@ export interface CreatePoolParams {
   amount:         bigint;
 }
 
+// ─── VeildBadges types ────────────────────────────────────────────────────────
+
+/**
+ * Badge ID constants. Each value corresponds to a specific on-chain achievement.
+ *
+ * 0 — FirstMessage   : creator received their first message
+ * 1 — RisingStar     : creator crossed 100 messages
+ * 2 — VerifiedCreator: manually verified by the platform
+ * 3 — FirstTip       : creator received their first tip
+ * 4 — TopTipper      : fan tipped more than 1 CELO total
+ * 5 — Subscriber     : fan holds an active subscription
+ * 6 — PoolCreator    : creator opened their first question pool
+ * 7 — PoolAnswerer   : creator answered a funded pool question
+ */
+export const BADGE_IDS = {
+  FirstMessage:    0n,
+  RisingStar:      1n,
+  VerifiedCreator: 2n,
+  FirstTip:        3n,
+  TopTipper:       4n,
+  Subscriber:      5n,
+  PoolCreator:     6n,
+  PoolAnswerer:    7n,
+} as const;
+
+export type BadgeId = (typeof BADGE_IDS)[keyof typeof BADGE_IDS];
+
+export interface BadgeBitmap {
+  firstMessage:    boolean;
+  risingStar:      boolean;
+  verifiedCreator: boolean;
+  firstTip:        boolean;
+  topTipper:       boolean;
+  subscriber:      boolean;
+  poolCreator:     boolean;
+  poolAnswerer:    boolean;
+}
+
 // ─── Result types ──────────────────────────────────────────────────────────────
 
 export interface WriteResult {

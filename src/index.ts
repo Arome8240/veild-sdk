@@ -4,6 +4,7 @@ export { VEILD_MESSAGES_ABI      } from "./abis/messages.js";
 export { VEILD_TIPS_ABI          } from "./abis/tips.js";
 export { VEILD_SUBSCRIPTIONS_ABI } from "./abis/subscriptions.js";
 export { VEILD_POOLS_ABI         } from "./abis/pools.js";
+export { VEILD_BADGES_ABI        } from "./abis/badges.js";
 
 // Addresses
 export { CONTRACT_ADDRESSES, getAddresses } from "./addresses.js";
@@ -16,6 +17,7 @@ export {
   veildTips,
   veildSubscriptions,
   veildPools,
+  veildBadges,
 } from "./contracts.js";
 
 // TypeScript types
@@ -31,6 +33,8 @@ export type {
   PoolStatus,
   Pool,
   Contribution,
+  BadgeId,
+  BadgeBitmap,
   RegisterCreatorParams,
   SendMessageParams,
   SendPriorityMessageParams,
@@ -40,6 +44,7 @@ export type {
   CreatePoolParams,
   WriteResult,
 } from "./types.js";
+export { BADGE_IDS } from "./types.js";
 
 // Client
 export {
