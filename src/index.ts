@@ -1,13 +1,22 @@
 // ABIs
-export { VEILD_REGISTRY_ABI } from "./abis/registry.js";
-export { VEILD_MESSAGES_ABI } from "./abis/messages.js";
+export { VEILD_REGISTRY_ABI      } from "./abis/registry.js";
+export { VEILD_MESSAGES_ABI      } from "./abis/messages.js";
+export { VEILD_TIPS_ABI          } from "./abis/tips.js";
+export { VEILD_SUBSCRIPTIONS_ABI } from "./abis/subscriptions.js";
+export { VEILD_POOLS_ABI         } from "./abis/pools.js";
 
 // Addresses
 export { CONTRACT_ADDRESSES, getAddresses } from "./addresses.js";
 export type { ChainAddresses } from "./addresses.js";
 
 // Contract configs (for wagmi / viem)
-export { veildRegistry, veildMessages } from "./contracts.js";
+export {
+  veildRegistry,
+  veildMessages,
+  veildTips,
+  veildSubscriptions,
+  veildPools,
+} from "./contracts.js";
 
 // TypeScript types
 export type {
@@ -15,10 +24,20 @@ export type {
   Message,
   WallPost,
   InboxStats,
+  Tip,
+  FanEntry,
+  SubscriptionTier,
+  Subscription,
+  PoolStatus,
+  Pool,
+  Contribution,
   RegisterCreatorParams,
   SendMessageParams,
   SendPriorityMessageParams,
   ReplyParams,
+  TipParams,
+  SubscribeParams,
+  CreatePoolParams,
   WriteResult,
 } from "./types.js";
 
